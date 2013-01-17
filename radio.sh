@@ -3,7 +3,12 @@
 # [[file:~/radio/TODO.org::*Associative%20arrays][Associative-arrays:1]]
 
 declare -A stations
+
+# Specify a player with the environment variable PLAYER; otherwise,
+# we'll take mplayer.
 player=${PLAYER:-mplayer -playlist}
+
+# Domain knowledge lives here.
 stations=(
     [kcme]='http://www.kcme.org/Audio%20Players/Broadband/listen.pls'
     [kcnv]='http://66.209.79.122:81/liveaudio/KCNVstream.ram'
@@ -78,7 +83,11 @@ stations=(
     [stephansdom]='http://srvhost24.serverhosting.apa.net:8000/rsdstream128.m3u'
     [wdr]='http://www.wdr.de/wdrlive/media/wdr3.m3u'
 )
+
+# If a playlist isn't specified, take all the stations.
 playlist=${@:-${!stations[@]}}
+
+# Shuffle the playlist and play.
 for station in $(echo $playlist | xargs shuf -e); do
     echo $player "${stations[$station]}"
 done
