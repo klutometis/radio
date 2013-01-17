@@ -21,7 +21,7 @@ stations=(
     [sdpb]='http://www.sdpb.org/player/radio2-livestream.asx'
     [wabe]='http://pba-ice.streamguys.org/wabe.m3u'
     # Needs the no-playlist option.
-    [waus]='mms://livestream.andrews.edu/waus-28'
+    # [waus]='mms://livestream.andrews.edu/waus-28'
     [wbaa]='http://audio-new.wbaa.purdue.edu:8000/wbaa-fm.m3u'
     [wbjc]='http://wbjc-sc.streamguys.org/listen.pls'
     [wclv]='http://www2.wclv.com/wclvhi.m3u'
@@ -78,6 +78,9 @@ stations=(
     [stephansdom]='http://srvhost24.serverhosting.apa.net:8000/rsdstream128.m3u'
     [wdr]='http://www.wdr.de/wdrlive/media/wdr3.m3u'
 )
-echo $player ${stations[wgbh]}
+playlist=${@:-${!stations[@]}}
+for station in $(echo $playlist | xargs shuf -e); do
+    echo $player "${stations[$station]}"
+done
 
 # Associative-arrays:1 ends here
