@@ -84,3 +84,4 @@
 * TODO Add e.g. =--shuffle=.
 * TODO Player over =PLAYER=
 * TODO Default all; otherwis: =--list=?
+* TODO Some keyboard shortcuts: visit the website, exclude this station, &c.
