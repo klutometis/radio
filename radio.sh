@@ -89,7 +89,8 @@ playlist=${@:-${!stations[@]}}
 
 # Shuffle the playlist and play.
 for station in $(echo $playlist | xargs shuf -e); do
-    echo $player "${stations[$station]}"
+    echo $station
+    $player "${stations[$station]}"
 done
 
 # Associative-arrays:1 ends here
