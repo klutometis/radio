@@ -1,0 +1,12 @@
+A radio player with a little domain knowledge about classical radio
+stations; this, for instance, play its hard-coded domain shufflingly:
+
+#+BEGIN_SRC sh
+  ./radio.sh
+#+END_SRC
+
+this, some caviar shufflingly:
+
+#+BEGIN_SRC sh
+  ./radio.sh kusc kqed
+#+END_SRC
