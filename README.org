@@ -10,3 +10,6 @@ this, some caviar shufflingly:
 #+BEGIN_SRC sh
   ./radio.sh kusc kqed
 #+END_SRC
+
+The =PLAYER= environment variable specifies the player and defaults to
+=mplayer -playlist=.
