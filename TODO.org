@@ -1,7 +1,7 @@
 * TODO Associative arrays
   [[http://www.linuxjournal.com/content/bash-associative-arrays][Thanks]]; [[http://www.gnu.org/software/bash/manual/html_node/Arrays.html][thanks]]; [[http://tldp.org/LDP/abs/html/bashver4.html][thanks]]. Also, thanks to [[http://classicalwebcast.com/][these cats]] for the station-listing.
 
-  #+BEGIN_SRC sh :comments link :tangle arrays.sh :shebang #!/usr/bin/env bash
+  #+BEGIN_SRC sh :comments link :tangle radio.sh :shebang #!/usr/bin/env bash
     declare -A stations
     player=${PLAYER:-mplayer -playlist}
     stations=(
@@ -81,3 +81,6 @@
     echo $player ${stations[wgbh]}
     
   #+END_SRC
+* TODO Add e.g. =--shuffle=.
+* TODO Player over =PLAYER=
+* TODO Default all; otherwis: =--list=?
